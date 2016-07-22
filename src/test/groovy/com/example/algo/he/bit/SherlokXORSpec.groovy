@@ -18,13 +18,13 @@ class SherlokXORSpec extends Specification {
         convertIntegers([1, 2, 3, 4]) | 4
     }
 
-    def int[] convertIntegers(List<Integer> integers)
+    def long[] convertIntegers(List<Integer> integers)
     {
-        int[] ret = new int[integers.size()]
+        long[] ret = new long[integers.size()]
         for (int i=0; i < ret.length; i++)
         {
             ret[i] = integers.get(i).intValue()
         }
-        ret;
+        ret
     }
 }
