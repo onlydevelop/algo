@@ -61,7 +61,7 @@ class TreeHelperSpec extends Specification {
 
         where:
         input          | element  | output
-        [10,5,15,2,7]  | 2        | false
+        [10,5,15,2,7]  | 2        | true
         [10,5,15,2,7]  | 3        | false
     }
 }
