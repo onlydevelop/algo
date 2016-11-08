@@ -49,4 +49,19 @@ class TreeHelperSpec extends Specification {
         input          | inorder
         [10,5,15,2,7]  | [2,5,7,10,15]
     }
+
+        @Unroll
+    def "returns #output => if #input contains: #element"() {
+        setup:
+        def cut = new TreeHelper()
+        def tree = cut.init(input)
+
+        expect:
+        output == cut.contains(tree, element)
+
+        where:
+        input          | element  | output
+        [10,5,15,2,7]  | 2        | false
+        [10,5,15,2,7]  | 3        | false
+    }
 }

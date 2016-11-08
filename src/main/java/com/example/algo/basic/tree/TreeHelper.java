@@ -32,6 +32,18 @@ public class TreeHelper {
         return true;
     }
 
+    public boolean contains(TreeNode<Integer> curr, Integer value) {
+        boolean res = false;
+        if(value < curr.getValue() && curr.getLeftNode() != null) {
+            res = contains(curr.getLeftNode(), value);
+        } else if (value > curr.getValue() && curr.getRightNode() != null) {
+            res = contains(curr.getRightNode(), value);
+        } else if (value == curr.getValue()) {
+            res = true;
+        }
+        return res;
+    }
+
     public TreeNode<Integer> init(ArrayList<Integer> nodeValues) {
         TreeNode<Integer> tree = null;
         for(Integer value : nodeValues) {
